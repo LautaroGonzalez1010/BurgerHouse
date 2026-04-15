@@ -7,6 +7,7 @@ const base = process.env.BASE_PATH || "/";
 const isPreview = process.env.IS_PREVIEW ? true : false;
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/BurgerHouse/",
   define: {
     __BASE_PATH__: JSON.stringify(base),
     __IS_PREVIEW__: JSON.stringify(isPreview),
@@ -66,7 +67,7 @@ export default defineConfig({
       dts: true,
     }),
   ],
-  base,
+  
   build: {
     sourcemap: true,
     outDir: "dist",

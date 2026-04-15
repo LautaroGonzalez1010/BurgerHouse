@@ -1,10 +1,8 @@
-
 import { RouteObject } from 'react-router-dom';
 import { lazy } from 'react';
 
 const HomePage = lazy(() => import('../pages/home/page'));
 const MenuPage = lazy(() => import('../pages/menu/page'));
-const NotFound = lazy(() => import('../pages/NotFound'));
 
 const routes: RouteObject[] = [
   {
@@ -12,12 +10,12 @@ const routes: RouteObject[] = [
     element: <HomePage />,
   },
   {
-    path: '/menu',
+    path: 'menu', // sin slash ✔️
     element: <MenuPage />,
   },
   {
-    path: '*',
-    element: <NotFound />,
+    path: '*', // 🔥 IMPORTANTE
+    element: <HomePage />, // fallback limpio
   },
 ];
 
